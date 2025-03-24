@@ -1,9 +1,61 @@
-# 19AI308-Object-Oriented-Programming-using-CSharp--Exp-8-Name-Hiding-with-interface-inheritance
-# AIM:
-To implement name hiding with interface inheritance. Aim is to create an interface IMario with a method Ability(). 
-Implement this interface in a class Mario and override the Ability() method also to create another class SuperMario that inherits from Mario 
-and hides the Ability() method using the new keyword.
+# 19AI308-Object-Oriented-Programming-using-CSharp--Ex6---Recursive-Function
+## Aim: 
+To write a C# program to reverse a number using a recursive function.
 
-# PROGRAM:
-# OUTPUT:
-# RESULT:
+## Algorithm:
+### Step 1:
+Create a class called reverse.
+
+### Step 2:
+Create a recursive function named RevNum to reverse the number
+
+### Step 3:
+In the function find a reminder of the number multiply it by 10 and add the reverse number.
+
+### Step 4:
+Recursively call this function to get the reversed number.
+
+### Step 5:
+Create a Main function
+
+### Step 6:
+Get input from the user for the number to be reversed.
+
+### Step 7:
+Call the function RevNum
+
+### Step 8:
+End of the program.
+
+## Program:
+```cs
+using System;
+
+public class reverse
+{
+    static int RevNum(int n, int rev = 0)
+    {
+        if (n == 0)
+        {
+            return rev;
+        }
+        int digit = n % 10;
+        rev = rev * 10 + digit;
+        return RevNum(n / 10, rev);
+    }
+
+    static void Main(string[] args)
+    {
+        Console.Write("Enter a number to reverse: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Reversed number: {0}", RevNum(number));
+    }
+}
+```
+
+## Output:
+![ex8](https://github.com/user-attachments/assets/04373d20-7ff4-4925-bd7e-43cce1a82f8b)
+
+
+## Result:
+Thus C# program to reverse a number using recursive function is written and executed sucessfully.
